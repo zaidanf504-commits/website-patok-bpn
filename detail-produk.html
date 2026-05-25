@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Produk | Patok Batas Tanah BPN</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons & Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <link href="./dist/output.css" rel="stylesheet">
+</head>
+<body class="font-sans text-slate-700 antialiased overflow-x-hidden selection:bg-bpn-orange selection:text-white bg-bpn-light">
+
+    <!-- Noise Overlay -->
+    <div class="bg-noise"></div>
+
+    <!-- Page Transition Overlay -->
+    <div class="page-transition" id="page-transition"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 nav-glass nav-scrolled" id="navbar" style="background: rgba(255, 255, 255, 0.95); border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center transition-all duration-300" id="nav-container">
+                <!-- Logo -->
+                <a href="index.html" class="page-link font-display text-2xl md:text-3xl font-bold text-bpn-dark tracking-tight z-50 relative group flex items-center gap-2">
+                    <div class="w-8 h-8 bg-bpn-orange text-white flex items-center justify-center rounded-lg shadow-glow">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <span>Patok<span class="text-bpn-orange">BPN</span></span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="page-link font-poppins text-slate-600 hover:text-bpn-dark font-medium hover-underline transition-colors duration-300">Beranda</a>
+                    <a href="produk.html" class="page-link font-poppins text-slate-600 hover:text-bpn-dark font-medium hover-underline transition-colors duration-300">Katalog</a>
+                    <a href="galeri.html" class="page-link font-poppins text-slate-600 hover:text-bpn-dark font-medium hover-underline transition-colors duration-300">Galeri</a>
+                    <a href="tentang.html" class="page-link font-poppins text-slate-600 hover:text-bpn-dark font-medium hover-underline transition-colors duration-300">Tentang</a>
+                    <a href="https://wa.me/6282140066232" target="_blank" class="px-6 py-2.5 bg-bpn-dark text-white font-poppins font-medium rounded-full hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fab fa-whatsapp text-bpn-orange"></i> Konsultasi
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center z-50 relative">
+                    <button id="mobile-menu-btn" class="text-bpn-dark focus:outline-none p-2 w-10 h-10 flex flex-col justify-center items-center gap-1.5 bg-white/80 backdrop-blur-md rounded-full shadow-sm border border-slate-200">
+                        <span class="w-5 h-[2px] bg-current transition-all duration-300" id="line1"></span>
+                        <span class="w-5 h-[2px] bg-current transition-all duration-300" id="line2"></span>
+                        <span class="w-5 h-[2px] bg-current transition-all duration-300" id="line3"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden absolute top-0 left-0 w-full bg-white/95 backdrop-blur-xl h-screen pt-32 px-8 shadow-2xl flex-col gap-8">
+            <a href="index.html" class="page-link font-display text-4xl font-medium text-slate-500 hover:text-bpn-dark">Beranda</a>
+            <a href="produk.html" class="page-link font-display text-4xl font-medium text-slate-500 hover:text-bpn-dark">Katalog Produk</a>
+            <a href="galeri.html" class="page-link font-display text-4xl font-medium text-slate-500 hover:text-bpn-dark">Galeri Proyek</a>
+            <a href="tentang.html" class="page-link font-display text-4xl font-medium text-slate-500 hover:text-bpn-dark">Tentang Kami</a>
+            <div class="mt-8 border-t border-slate-200 pt-8">
+                <a href="https://wa.me/6282140066232" target="_blank" class="inline-flex px-8 py-4 bg-bpn-dark text-white font-poppins font-medium rounded-full shadow-lg items-center justify-center gap-3 w-full">
+                    Hubungi via WhatsApp <i class="fab fa-whatsapp text-bpn-orange text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="pt-28 pb-4 bg-white border-b border-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="flex text-sm text-slate-500 font-poppins">
+                <a href="index.html" class="page-link hover:text-bpn-orange transition-colors">Beranda</a>
+                <span class="mx-3">/</span>
+                <a href="produk.html" class="page-link hover:text-bpn-orange transition-colors">Katalog</a>
+                <span class="mx-3">/</span>
+                <span class="text-bpn-dark font-medium">Patok Batas Tanah BPN</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Product Detail Section -->
+    <section class="py-12 sm:py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20">
+                
+                <!-- Product Image Gallery -->
+                <div data-aos="fade-right">
+                    <div class="bg-slate-100 rounded-[2.5rem] p-4 border border-slate-100 relative group overflow-hidden">
+                        <div class="absolute top-8 left-8 z-10 bg-bpn-orange text-white text-[12px] font-bold px-4 py-2 rounded-full uppercase tracking-wider shadow-glow">
+                            Best Seller
+                        </div>
+                        <div class="aspect-square rounded-[2rem] overflow-hidden bg-white">
+                            <img src="image/patok.jpeg" alt="Patok Batas Tanah BPN" class="w-full h-full object-cover transform hover:scale-110 transition-transform duration-700 cursor-zoom-in" onerror="this.src='https://placehold.co/800x800/0f172a/FFFFFF?text=Foto+Produk'">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="flex flex-col justify-center" data-aos="fade-left">
+                    <div class="inline-flex items-center gap-2 text-bpn-orange font-poppins font-semibold text-sm tracking-widest uppercase mb-4">
+                        <i class="fas fa-tags text-xs"></i> Produk Utama
+                    </div>
+                    
+                    <h1 class="font-display text-4xl sm:text-5xl font-bold text-bpn-dark mb-4 leading-tight">Patok Batas Tanah BPN (Standar Resmi)</h1>
+                    
+                    <div class="flex items-center gap-4 mb-6 pb-6 border-b border-slate-100">
+                        <div class="flex text-bpn-yellow text-sm">
+                            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                        </div>
+                        <span class="text-slate-400 text-sm">(500+ Terjual)</span>
+                    </div>
+
+                    <p class="font-sans text-slate-600 text-lg leading-relaxed mb-8">
+                        Patok cor beton spesifikasi standar resmi Badan Pertanahan Nasional. Dirancang khusus dengan material beton padat (tanpa kapur berlebih) untuk menjamin patok tidak mudah patah saat dipukul ke dalam tanah. Dilengkapi tulisan BPN yang diukir dalam dan tajam.
+                    </p>
+
+                    <div class="grid grid-cols-2 gap-6 mb-10">
+                        <div>
+                            <p class="text-xs text-slate-400 font-poppins font-semibold uppercase tracking-wider mb-1">Material</p>
+                            <p class="font-display font-bold text-bpn-dark text-lg">Beton Cor Padat</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400 font-poppins font-semibold uppercase tracking-wider mb-1">Dimensi</p>
+                            <p class="font-display font-bold text-bpn-dark text-lg">50 x 10 x 10 cm</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400 font-poppins font-semibold uppercase tracking-wider mb-1">Berat</p>
+                            <p class="font-display font-bold text-bpn-dark text-lg">± 12 Kg</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-400 font-poppins font-semibold uppercase tracking-wider mb-1">Ketersediaan</p>
+                            <p class="font-display font-bold text-green-500 text-lg flex items-center gap-2"><i class="fas fa-check-circle"></i> Ready Stock</p>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="flex flex-col sm:flex-row gap-4 mb-8">
+                        <a href="https://wa.me/6282140066232?text=Halo%20Bapak,%20saya%20ingin%20memesan%20Patok%20Batas%20Tanah%20BPN." target="_blank" class="flex-1 flex items-center justify-center px-8 py-4 bg-bpn-orange text-white font-poppins font-bold rounded-2xl hover:bg-[#ff7a26] transition-all shadow-glow text-lg shine-effect gap-3">
+                            <i class="fab fa-whatsapp text-2xl"></i> Pesan via WA
+                        </a>
+                        <a href="tel:+6282140066232" class="flex items-center justify-center px-8 py-4 bg-white border-2 border-slate-200 text-bpn-dark font-poppins font-bold rounded-2xl hover:border-bpn-dark hover:bg-slate-50 transition-all text-lg gap-3">
+                            <i class="fas fa-phone"></i> Telepon
+                        </a>
+                    </div>
+                    
+                    <p class="text-xs text-slate-500 font-sans flex items-center gap-2">
+                        <i class="fas fa-info-circle text-slate-400"></i> Harga khusus menanti untuk pembelian skala proyek / grosir.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detail Deskripsi & FAQ Tabs -->
+    <section class="py-16 bg-bpn-light border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-white rounded-[2rem] p-8 sm:p-12 border border-slate-100 shadow-sm" data-aos="fade-up">
+                
+                <h3 class="font-display text-2xl font-bold text-bpn-dark mb-6 pb-4 border-b border-slate-100">Keunggulan Spesifik Produk</h3>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-green-50 text-green-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <p class="font-poppins font-semibold text-bpn-dark">Tahan Pukulan Keras</p>
+                                <p class="text-sm text-slate-500">Aman dipukul palu besar berkali-kali saat ditanam ke dalam tanah padat.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-green-50 text-green-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <p class="font-poppins font-semibold text-bpn-dark">Anti Lapuk & Retak</p>
+                                <p class="text-sm text-slate-500">Adonan semen murni tanpa kapur membuat patok tahan segala cuaca bertahun-tahun.</p>
+                            </div>
+                        </li>
+                    </ul>
+                    <ul class="space-y-4">
+                        <li class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-green-50 text-green-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <p class="font-poppins font-semibold text-bpn-dark">Tulisan BPN Tajam</p>
+                                <p class="text-sm text-slate-500">Cetakan khusus kami menghasilkan tulisan 'BPN' yang dalam dan mudah dibaca.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-4">
+                            <div class="w-8 h-8 rounded-full bg-green-50 text-green-500 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <div>
+                                <p class="font-poppins font-semibold text-bpn-dark">Stok Ribuan</p>
+                                <p class="text-sm text-slate-500">Selalu siap menyuplai kebutuhan proyek pemetaan desa (PTSL) secara langsung.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Premium -->
+    <footer class="bg-bpn-light pt-20 pb-10 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+                <!-- Brand Col -->
+                <div class="md:col-span-5">
+                    <a href="index.html" class="font-display text-3xl font-bold text-bpn-dark tracking-tight mb-6 inline-block flex items-center gap-2">
+                        <div class="w-8 h-8 bg-bpn-orange text-white flex items-center justify-center rounded-lg">
+                            <i class="fas fa-map-marker-alt text-sm"></i>
+                        </div>
+                        PatokBatas<span class="text-bpn-orange">BPN</span>
+                    </a>
+                    <p class="font-sans text-slate-500 leading-relaxed max-w-sm mb-8 text-sm">
+                        Manufaktur patok batas tanah spesifikasi resmi BPN dan nisan kuburan. Kualitas beton cor premium untuk kejelasan dan keamanan aset properti Anda.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-bpn-dark hover:text-white hover:border-bpn-dark transition-all duration-300 shadow-sm">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-bpn-dark hover:text-white hover:border-bpn-dark transition-all duration-300 shadow-sm">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Links Col -->
+                <div class="md:col-span-3">
+                    <h4 class="font-poppins font-bold text-bpn-dark mb-6 text-lg">Navigasi</h4>
+                    <ul class="space-y-3 font-sans text-slate-500 text-sm">
+                        <li><a href="index.html" class="page-link hover:text-bpn-orange transition-colors">Beranda</a></li>
+                        <li><a href="produk.html" class="page-link hover:text-bpn-orange transition-colors">Katalog Produk</a></li>
+                        <li><a href="galeri.html" class="page-link hover:text-bpn-orange transition-colors">Galeri Proyek</a></li>
+                        <li><a href="tentang.html" class="page-link hover:text-bpn-orange transition-colors">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Col -->
+                <div class="md:col-span-4">
+                    <h4 class="font-poppins font-bold text-bpn-dark mb-6 text-lg">Hubungi Kami</h4>
+                    <ul class="space-y-4 font-sans text-slate-500 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fab fa-whatsapp text-bpn-orange text-lg mt-0.5"></i>
+                            <div>
+                                <p class="font-semibold text-bpn-dark">WhatsApp / Telepon</p>
+                                <a href="https://wa.me/6282140066232" target="_blank" class="hover:text-bpn-orange transition-colors">+62 821-4006-6232</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-bpn-orange text-lg mt-0.5"></i>
+                            <div>
+                                <p class="font-semibold text-bpn-dark">Workshop</p>
+                                <p>Kota Pasuruan, Sekargadung<br>Pesona Candi 4 Block AF 63</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="font-sans text-xs text-slate-400">© 2026 Patok Batas Tanah BPN. All rights reserved.</p>
+                <p class="font-sans text-xs text-slate-400 flex items-center gap-1.5">
+                    Designed with <i class="fas fa-heart text-bpn-orange animate-pulse"></i> for Professional Business
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({ duration: 800, once: true, offset: 50, easing: 'ease-out-cubic' });
+
+        // Enter Transition
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const transition = document.getElementById('page-transition');
+                transition.classList.add('loaded');
+            }, 100);
+        });
+
+        // Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const l1 = document.getElementById('line1');
+        const l2 = document.getElementById('line2');
+        const l3 = document.getElementById('line3');
+        
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            setTimeout(() => menu.classList.toggle('open'), 10);
+            
+            if(menu.classList.contains('open')) {
+                l1.style.transform = 'translateY(7px) rotate(45deg)';
+                l2.style.opacity = '0';
+                l3.style.transform = 'translateY(-7px) rotate(-45deg)';
+                document.body.style.overflow = 'hidden';
+            } else {
+                l1.style.transform = 'none';
+                l2.style.opacity = '1';
+                l3.style.transform = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Exit Transition
+        document.querySelectorAll('.page-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const target = this.getAttribute('href');
+                if(target && target.includes('.html') && !this.hasAttribute('target')) {
+                    e.preventDefault();
+                    const transition = document.getElementById('page-transition');
+                    transition.classList.remove('loaded');
+                    transition.classList.add('active');
+                    setTimeout(() => { window.location.href = target; }, 600); 
+                }
+            });
+        });
+    </script>
+</body>
+</html>

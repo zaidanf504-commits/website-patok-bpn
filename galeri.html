@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galeri Proyek | Patok Batas Tanah BPN</title>
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Icons & Animation -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Tailwind CSS -->
+    <link href="./dist/output.css" rel="stylesheet">
+</head>
+<body class="font-sans text-slate-700 antialiased overflow-x-hidden selection:bg-bpn-orange selection:text-white bg-bpn-light">
+
+    <!-- Noise Overlay -->
+    <div class="bg-noise"></div>
+
+    <!-- Page Transition Overlay -->
+    <div class="page-transition" id="page-transition"></div>
+
+    <!-- Navbar -->
+    <nav class="fixed w-full z-50 nav-glass nav-scrolled" id="navbar" style="background: rgba(255, 255, 255, 0.95); border-bottom: 1px solid rgba(0,0,0,0.05);">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20 items-center transition-all duration-300" id="nav-container">
+                <!-- Logo -->
+                <a href="index.html" class="page-link font-display text-2xl md:text-3xl font-bold text-bpn-dark tracking-tight z-50 relative group flex items-center gap-2">
+                    <div class="w-8 h-8 bg-bpn-orange text-white flex items-center justify-center rounded-lg shadow-glow">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <span>Patok<span class="text-bpn-orange">BPN</span></span>
+                </a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="page-link font-poppins text-slate-600 hover:text-bpn-dark font-medium hover-underline transition-colors duration-300">Beranda</a>
+                    <a href="produk.html" class="page-link font-poppins text-slate-600 hover:text-bpn-dark font-medium hover-underline transition-colors duration-300">Katalog</a>
+                    <a href="galeri.html" class="page-link font-poppins text-bpn-orange font-medium hover-underline active">Galeri</a>
+                    <a href="tentang.html" class="page-link font-poppins text-slate-600 hover:text-bpn-dark font-medium hover-underline transition-colors duration-300">Tentang</a>
+                    <a href="https://wa.me/6282140066232" target="_blank" class="px-6 py-2.5 bg-bpn-dark text-white font-poppins font-medium rounded-full hover:bg-slate-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center gap-2">
+                        <i class="fab fa-whatsapp text-bpn-orange"></i> Konsultasi
+                    </a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center z-50 relative">
+                    <button id="mobile-menu-btn" class="text-bpn-dark focus:outline-none p-2 w-10 h-10 flex flex-col justify-center items-center gap-1.5 bg-white/80 backdrop-blur-md rounded-full shadow-sm border border-slate-200">
+                        <span class="w-5 h-[2px] bg-current transition-all duration-300" id="line1"></span>
+                        <span class="w-5 h-[2px] bg-current transition-all duration-300" id="line2"></span>
+                        <span class="w-5 h-[2px] bg-current transition-all duration-300" id="line3"></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden absolute top-0 left-0 w-full bg-white/95 backdrop-blur-xl h-screen pt-32 px-8 shadow-2xl flex-col gap-8">
+            <a href="index.html" class="page-link font-display text-4xl font-medium text-slate-500 hover:text-bpn-dark">Beranda</a>
+            <a href="produk.html" class="page-link font-display text-4xl font-medium text-slate-500 hover:text-bpn-dark">Katalog Produk</a>
+            <a href="galeri.html" class="page-link font-display text-4xl font-semibold text-bpn-dark">Galeri Proyek<span class="text-bpn-orange">.</span></a>
+            <a href="tentang.html" class="page-link font-display text-4xl font-medium text-slate-500 hover:text-bpn-dark">Tentang Kami</a>
+            <div class="mt-8 border-t border-slate-200 pt-8">
+                <a href="https://wa.me/6282140066232" target="_blank" class="inline-flex px-8 py-4 bg-bpn-dark text-white font-poppins font-medium rounded-full shadow-lg items-center justify-center gap-3 w-full">
+                    Hubungi via WhatsApp <i class="fab fa-whatsapp text-bpn-orange text-xl"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <section class="pt-32 pb-16 lg:pt-40 lg:pb-24 bg-bpn-dark text-white relative overflow-hidden">
+        <div class="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-slate-600 to-transparent"></div>
+        <div class="orb-1 blur-orb" style="top: -200px; right: -200px; left: auto; opacity: 0.15; background: #FF6500;"></div>
+        <div class="absolute inset-0 opacity-20" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 32px 32px;"></div>
+        
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10" data-aos="fade-up">
+            <h1 class="font-display text-4xl sm:text-5xl md:text-6xl font-bold mb-6 tracking-tight">Dokumentasi <span class="text-bpn-orange">Proyek</span></h1>
+            <p class="text-slate-400 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed font-sans">Melihat lebih dekat kualitas produk dan aktivitas pengiriman kami untuk berbagai proyek pemetaan tanah dan perumahan.</p>
+        </div>
+    </section>
+
+    <!-- Masonry Gallery -->
+    <section class="py-20 bg-bpn-light relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="columns-1 sm:columns-2 lg:columns-3 gap-6 space-y-6">
+                <!-- Gallery Item 1 (Placeholder, can be replaced by real images) -->
+                <div class="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white border border-slate-200" data-aos="fade-up">
+                    <img src="https://images.unsplash.com/photo-1541888086425-d81bb19240f5?q=80&w=1000&auto=format&fit=crop" alt="Proyek Pemasangan" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-bpn-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <p class="text-white font-poppins font-bold text-lg">Proyek Pemetaan Desa</p>
+                        <p class="text-slate-300 text-sm font-sans">Suplai 1000 Patok PTSL</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 2 -->
+                <div class="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white border border-slate-200" data-aos="fade-up" data-aos-delay="100">
+                    <img src="image/patok.jpeg" alt="Produksi Patok" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1589939705384-5185137a7f0f?q=80&w=1000&auto=format&fit=crop'">
+                    <div class="absolute inset-0 bg-gradient-to-t from-bpn-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <p class="text-white font-poppins font-bold text-lg">Proses Produksi</p>
+                        <p class="text-slate-300 text-sm font-sans">Pengecekan kualitas cor</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 3 -->
+                <div class="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white border border-slate-200" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1000&auto=format&fit=crop" alt="Konstruksi" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-bpn-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <p class="text-white font-poppins font-bold text-lg">Pengiriman Area Jatim</p>
+                        <p class="text-slate-300 text-sm font-sans">Armada siap antar</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 4 -->
+                <div class="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white border border-slate-200" data-aos="fade-up" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1531834685032-c34bf0d84c77?q=80&w=1000&auto=format&fit=crop" alt="Material" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-bpn-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <p class="text-white font-poppins font-bold text-lg">Kualitas Material</p>
+                        <p class="text-slate-300 text-sm font-sans">Pasir & Semen pilihan</p>
+                    </div>
+                </div>
+
+                <!-- Gallery Item 5 -->
+                <div class="break-inside-avoid relative group rounded-2xl overflow-hidden bg-white border border-slate-200" data-aos="fade-up" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1504307651254-35680f356f67?q=80&w=1000&auto=format&fit=crop" alt="Pengukuran" class="w-full h-auto object-cover transform group-hover:scale-105 transition-transform duration-700" loading="lazy">
+                    <div class="absolute inset-0 bg-gradient-to-t from-bpn-dark/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-6">
+                        <p class="text-white font-poppins font-bold text-lg">Standar BPN</p>
+                        <p class="text-slate-300 text-sm font-sans">Presisi ukuran 100%</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Note -->
+            <div class="mt-16 text-center" data-aos="fade-up">
+                <div class="inline-flex items-center px-4 py-2 border border-slate-200 bg-white rounded-full shadow-sm">
+                    <i class="fas fa-info-circle text-bpn-orange mr-2"></i>
+                    <span class="text-slate-500 font-sans text-sm">Foto di atas merupakan ilustrasi dokumentasi (sebagian placeholder dapat diganti dengan foto asli proyek).</span>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <!-- Footer Premium -->
+    <footer class="bg-bpn-light pt-20 pb-10 border-t border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+                <!-- Brand Col -->
+                <div class="md:col-span-5">
+                    <a href="index.html" class="font-display text-3xl font-bold text-bpn-dark tracking-tight mb-6 inline-block flex items-center gap-2">
+                        <div class="w-8 h-8 bg-bpn-orange text-white flex items-center justify-center rounded-lg">
+                            <i class="fas fa-map-marker-alt text-sm"></i>
+                        </div>
+                        PatokBatas<span class="text-bpn-orange">BPN</span>
+                    </a>
+                    <p class="font-sans text-slate-500 leading-relaxed max-w-sm mb-8 text-sm">
+                        Manufaktur patok batas tanah spesifikasi resmi BPN dan nisan kuburan. Kualitas beton cor premium untuk kejelasan dan keamanan aset properti Anda.
+                    </p>
+                    <div class="flex gap-3">
+                        <a href="#" class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-bpn-dark hover:text-white hover:border-bpn-dark transition-all duration-300 shadow-sm">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 rounded-full bg-white border border-slate-200 flex items-center justify-center text-slate-600 hover:bg-bpn-dark hover:text-white hover:border-bpn-dark transition-all duration-300 shadow-sm">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Links Col -->
+                <div class="md:col-span-3">
+                    <h4 class="font-poppins font-bold text-bpn-dark mb-6 text-lg">Navigasi</h4>
+                    <ul class="space-y-3 font-sans text-slate-500 text-sm">
+                        <li><a href="index.html" class="page-link hover:text-bpn-orange transition-colors">Beranda</a></li>
+                        <li><a href="produk.html" class="page-link hover:text-bpn-orange transition-colors">Katalog Produk</a></li>
+                        <li><a href="galeri.html" class="hover:text-bpn-orange transition-colors">Galeri Proyek</a></li>
+                        <li><a href="tentang.html" class="page-link hover:text-bpn-orange transition-colors">Tentang Kami</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact Col -->
+                <div class="md:col-span-4">
+                    <h4 class="font-poppins font-bold text-bpn-dark mb-6 text-lg">Hubungi Kami</h4>
+                    <ul class="space-y-4 font-sans text-slate-500 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i class="fab fa-whatsapp text-bpn-orange text-lg mt-0.5"></i>
+                            <div>
+                                <p class="font-semibold text-bpn-dark">WhatsApp / Telepon</p>
+                                <a href="https://wa.me/6282140066232" target="_blank" class="hover:text-bpn-orange transition-colors">+62 821-4006-6232</a>
+                            </div>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-bpn-orange text-lg mt-0.5"></i>
+                            <div>
+                                <p class="font-semibold text-bpn-dark">Workshop</p>
+                                <p>Kota Pasuruan, Sekargadung<br>Pesona Candi 4 Block AF 63</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
+                <p class="font-sans text-xs text-slate-400">© 2026 Patok Batas Tanah BPN. All rights reserved.</p>
+                <p class="font-sans text-xs text-slate-400 flex items-center gap-1.5">
+                    Designed with <i class="fas fa-heart text-bpn-orange animate-pulse"></i> for Professional Business
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WA Button -->
+    <a href="https://wa.me/6282140066232" target="_blank" rel="noopener noreferrer" class="fixed bottom-6 right-6 z-[90] flex items-center justify-center w-14 h-14 sm:w-16 sm:h-16 bg-[#25D366] text-white rounded-full shadow-lg hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+        <span class="absolute inline-flex h-full w-full rounded-full bg-[#25D366] opacity-30 animate-ping pointer-events-none"></span>
+        <i class="fab fa-whatsapp text-3xl sm:text-4xl relative z-10 group-hover:scale-110 transition-transform"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({ duration: 800, once: true, offset: 50, easing: 'ease-out-cubic' });
+
+        // Enter Transition
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const transition = document.getElementById('page-transition');
+                transition.classList.add('loaded');
+            }, 100);
+        });
+
+        // Mobile Menu
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const l1 = document.getElementById('line1');
+        const l2 = document.getElementById('line2');
+        const l3 = document.getElementById('line3');
+        
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            setTimeout(() => menu.classList.toggle('open'), 10);
+            
+            if(menu.classList.contains('open')) {
+                l1.style.transform = 'translateY(7px) rotate(45deg)';
+                l2.style.opacity = '0';
+                l3.style.transform = 'translateY(-7px) rotate(-45deg)';
+                document.body.style.overflow = 'hidden';
+            } else {
+                l1.style.transform = 'none';
+                l2.style.opacity = '1';
+                l3.style.transform = 'none';
+                document.body.style.overflow = '';
+            }
+        });
+
+        // Exit Transition
+        document.querySelectorAll('.page-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const target = this.getAttribute('href');
+                if(target && target.includes('.html') && !this.hasAttribute('target')) {
+                    e.preventDefault();
+                    const transition = document.getElementById('page-transition');
+                    transition.classList.remove('loaded');
+                    transition.classList.add('active');
+                    setTimeout(() => { window.location.href = target; }, 600); 
+                }
+            });
+        });
+    </script>
+</body>
+</html>
